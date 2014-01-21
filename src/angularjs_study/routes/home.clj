@@ -24,8 +24,9 @@
 
 (defn ng-sample
   [id]
-  (layout/render
-    "ng-sample-07.html" {:content "hoge"}))
+  (if (and (= (count id) 2) (re-seq #"\d{2}" id))
+    (layout/render (str "ng-sample-" id ".html") {:content "hoge"})
+    (str "what??")))
 
 (defroutes home-routes
   (GET "/" [] (home-page))

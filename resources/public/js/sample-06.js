@@ -9,7 +9,7 @@ var GridDemoCtrl = function ($scope) {
       data: 'myData',
       columnDefs: [
         {field:'name', displayName:'名前'},
-        {field:'age', displayName:'年齢', cellTemplate: 'sample-06-cellTemplate.html'}
+        {field:'age', displayName:'年齢'}
       ]
   };
 };
