@@ -1,0 +1,7 @@
+[% extends "angularjs_study/views/templates/ng-base.html" %]
+[% block content %]
+  [% script "/js/sample-07.js" %]
+  <div ng-controller="GridDemoCtrl">
+    <div class="gridStyle" ng-grid="gridOptions"></div>
+  </div>
+[% endblock %]

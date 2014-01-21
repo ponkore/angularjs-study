@@ -22,7 +22,13 @@
    {:name "Alma", :allowance 43, :paid true},
    {:name "Jared", :allowance 21, :paid true}])
 
+(defn ng-sample
+  [id]
+  (layout/render
+    "ng-sample-07.html" {:content "hoge"}))
+
 (defroutes home-routes
   (GET "/" [] (home-page))
   (GET "/about" [] (about-page))
+  (GET "/ng-sample/:id" [id] (ng-sample id))
   (GET "/test" [] (json (sample-records))))
