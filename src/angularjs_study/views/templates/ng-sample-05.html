@@ -1,6 +1,8 @@
 [% extends "angularjs_study/views/templates/ng-base.html" %]
 [% block content %]
-  <script src="/js/sample-05.js"></script>
+  <script>
+  [% include "angularjs_study/js/sample-05.js" %]
+  </script>
   <div ng-controller="ModalDemoCtrl">
     <script type="text/ng-template" id="myModalContent.html">
       <div class="modal-header">

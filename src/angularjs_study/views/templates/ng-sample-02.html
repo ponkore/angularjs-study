@@ -1,6 +1,8 @@
 [% extends "angularjs_study/views/templates/ng-base.html" %]
 [% block content %]
-  <script src="/js/sample-02.js"></script>
+  <script>
+  [% include "angularjs_study/js/sample-02.js" %]
+  </script>
   <div ng-controller="AlertDemoCtrl">
     <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
     <button class='btn btn-default' ng-click="addAlert()">Add Alert</button>
