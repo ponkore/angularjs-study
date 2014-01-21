@@ -1,5 +1,12 @@
 [% extends "angularjs_study/views/templates/ng-base.html" %]
 [% block content %]
+  <style>
+.gridStyle {
+    border: 1px solid rgb(212,212,212);
+    width: 600px;
+    height: 300px;
+}
+  </style>
   [% script "/js/sample-07.js" %]
   <div ng-controller="GridDemoCtrl">
     <div class="gridStyle" ng-grid="gridOptions"></div>
