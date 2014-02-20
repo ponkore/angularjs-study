@@ -10,8 +10,11 @@
                  [com.postspectacular/rotor "0.1.0"]
                  [com.taoensso/tower "2.0.1"]
                  [markdown-clj "0.9.40"]
-                 [environ "0.4.0"]]
-
+                 [environ "0.4.0"]
+                 [org.clojure/java.jdbc "0.3.3"]
+                 [c3p0/c3p0 "0.9.1.2"]
+                 [c3p0/c3p0-oracle-thin-extras "0.9.0.2"]
+                 [com.oracle/ojdbc6 "11.2.0.4"]]
   :repl-options {:init-ns angularjs-study.repl}
   :plugins [[lein-ring "0.8.10"]
             [lein-environ "0.4.0"]]
