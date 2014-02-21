@@ -13,19 +13,6 @@
   (route/resources "/")
   (route/not-found "Not Found"))
 
-(defn oracle-dbspec
-  ""
-  [host port service user password]
-  {:classname "oracle.jdbc.driver.OracleDriver"
-   :subprotocol "oracle"
-   :subname (str "thin:@" host ":" port ":" service)
-   :user user
-   :password password})
-
-(def db-config
-  ""
-  (oracle-dbspec "172.23.200.120" "1521" "TESTFL" "JRWZAIF3" "JRWZAIF3"))
-
 (defn init
   "init will be called once when
    app is deployed as a servlet on
@@ -45,21 +32,12 @@
     {:path "angularjs_study.log" :max-size (* 512 1024) :backlog 10})
 
   (if (env :selmer-dev) (parser/cache-off!))
-
-  ;; TODO: initialize error handling
-  (db/db-initialize! db-config)
-  ;; TODO: initialize error handling
-
   (timbre/info "angularjs-study started successfully"))
 
 (defn destroy
   "destroy will be called when your application
    shuts down, put any clean up code here"
   []
-  ;; TODO: logging
-  (db/db-terminate!)
-  ;; TODO: logging
-
   (timbre/info "angularjs-study is shutting down..."))
 
 (defn template-error-page [handler]
