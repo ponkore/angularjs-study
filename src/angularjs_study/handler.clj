@@ -1,13 +1,13 @@
 (ns angularjs-study.handler
   (:require [compojure.core :refer [defroutes]]
             [angularjs-study.routes.home :refer [home-routes]]
+            [angularjs-study.routes.ng-sample :refer [sample-routes]]
             [noir.util.middleware :as middleware]
             [compojure.route :as route]
             [taoensso.timbre :as timbre]
             [com.postspectacular.rotor :as rotor]
             [selmer.parser :as parser]
-            [environ.core :refer [env]]
-            [angularjs-study.database :as db]))
+            [environ.core :refer [env]]))
 
 (defroutes app-routes
   (route/resources "/")
@@ -55,7 +55,7 @@
 
 (def app (middleware/app-handler
            ;; add your application routes here
-           [home-routes app-routes]
+           [sample-routes home-routes app-routes]
            ;; add custom middleware here
            :middleware [template-error-page]
            ;; add access rules here

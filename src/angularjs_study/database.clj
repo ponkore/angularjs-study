@@ -2,9 +2,8 @@
   (:require [angularjs-study.config :as config])
   (:import  [com.mchange.v2.c3p0 ComboPooledDataSource]))
 
-(def ^{:private true} db (atom nil))
-
 (defn- pool
+  ""
   [spec]
   (let [cpds (doto (ComboPooledDataSource.)
                (.setDriverClass (:classname spec))
@@ -16,6 +15,11 @@
                (.setInitialPoolSize 1))]
     {:datasource cpds}))
 
-(def ^{:private true} pooled-db (delay (pool config/db-spec)))
+(def ^{:private true} pooled-db
+  ""
+  (delay (pool config/db-spec)))
 
-(defn db-connection [] @pooled-db)
+(defn db-connection
+  ""
+  []
+  @pooled-db)
